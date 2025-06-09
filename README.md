@@ -1,102 +1,102 @@
-# Document Q&A System
+# Doküman Soru-Cevap Sistemi
 
-A comprehensive document question-answering system built with Streamlit and LangChain for analyzing PDF and TXT files using advanced language models.
+Streamlit ve LangChain kullanılarak geliştirilmiş, PDF ve TXT dosyalarını analiz edebilen kapsamlı doküman soru-cevap sistemi.
 
-## Overview
+## Genel Bakış
 
-This project enables users to upload documents and ask questions about their content using state-of-the-art GPT models. It combines document processing, vector databases, and conversational AI to provide intelligent document analysis capabilities.
+Bu proje, kullanıcıların dokümanlarını yükleyerek içerikleri hakkında sorular sorabilmelerini sağlar. En son teknoloji GPT modelleri kullanılarak geliştirilmiştir. Doküman işleme, vektör veritabanları ve konuşmalı yapay zeka teknolojilerini bir araya getirerek akıllı doküman analizi özellikleri sunar.
 
-The system automatically processes documents, creates searchable embeddings, and maintains conversation context to deliver accurate answers with source references.
+Sistem otomatik olarak dokümanları işler, aranabilir gömülü vektörler oluşturur ve doğru cevaplar vermek için konuşma bağlamını korur. Her cevap için kaynak referansları gösterir.
 
-## Features
+## Özellikler
 
-- **Multi-format support**: Process PDF and TXT documents
-- **Advanced AI models**: Choose from GPT-4o Mini, GPT-3.5 Turbo, and GPT-4
-- **Flexible embeddings**: Select between OpenAI and HuggingFace embeddings
-- **Vector databases**: FAISS and Chroma integration for efficient search
-- **Conversation memory**: Maintains context across multiple questions
-- **Chat management**: Create, save, and load conversation histories
-- **Source attribution**: Shows which document sections were used for answers
-- **Real-time streaming**: Get responses as they're generated
-- **Responsive UI**: Clean, modern web interface
+- **Çoklu format desteği**: PDF ve TXT dokümanlarını işleme
+- **Gelişmiş AI modelleri**: GPT-4o Mini, GPT-3.5 Turbo ve GPT-4 seçenekleri
+- **Esnek gömme seçenekleri**: OpenAI ve HuggingFace embedding'leri arasında seçim
+- **Vektör veritabanları**: Verimli arama için FAISS ve Chroma entegrasyonu
+- **Konuşma hafızası**: Birden fazla soru arasında bağlamı koruma
+- **Sohbet yönetimi**: Konuşma geçmişlerini oluşturma, kaydetme ve yükleme
+- **Kaynak gösterimi**: Cevaplar için hangi doküman bölümlerinin kullanıldığını gösterme
+- **Gerçek zamanlı streaming**: Cevapları oluşturulurken görme
+- **Duyarlı arayüz**: Temiz, modern web arayüzü
 
-## Installation
+## Kurulum
 
-1. Clone the repository:
+1. Repoyu klonlayın:
 ```bash
 git clone <repository-url>
 cd document-qa-system
 ```
 
-2. Create virtual environment:
+2. Sanal ortam oluşturun:
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. Bağımlılıkları yükleyin:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Configure environment variables:
+4. Çevre değişkenlerini yapılandırın:
 ```bash
 echo "OPENAI_API_KEY=your-openai-api-key-here" > .env
 ```
 
-## Usage
+## Kullanım
 
-1. Start the application:
+1. Uygulamayı başlatın:
 ```bash
 streamlit run app.py
 ```
 
-2. Open your browser to `http://localhost:8501`
+2. Tarayıcınızda `http://localhost:8501` adresini açın
 
-3. Configure your preferences:
-   - Select AI model (GPT-4o Mini recommended)
-   - Choose embedding type (OpenAI for quality, HuggingFace for free)
-   - Pick vector database (FAISS for speed, Chroma for features)
+3. Tercihlerinizi yapılandırın:
+   - AI modeli seçin (GPT-4o Mini önerilir)
+   - Embedding türü seçin (kalite için OpenAI, ücretsiz için HuggingFace)
+   - Vektör veritabanı seçin (hız için FAISS, özellikler için Chroma)
 
-4. Upload PDF or TXT documents
+4. PDF veya TXT dokümanlarını yükleyin
 
-5. Click "Process Documents" and wait for completion
+5. "Dokümanları İşle" butonuna tıklayın ve tamamlanmasını bekleyin
 
-6. Start asking questions about your documents!
+6. Dokümanlarınız hakkında soru sormaya başlayın!
 
-## Configuration Options
+## Yapılandırma Seçenekleri
 
-### AI Models
-- **GPT-4o Mini**: Most cost-effective with excellent performance
-- **GPT-3.5 Turbo**: Fast and affordable for general use  
-- **GPT-4**: Highest quality for complex queries
+### AI Modelleri
+- **GPT-4o Mini**: Mükemmel performansla en uygun maliyetli seçenek
+- **GPT-3.5 Turbo**: Genel kullanım için hızlı ve ekonomik
+- **GPT-4**: Karmaşık sorgular için en yüksek kalite
 
-### Embeddings
-- **OpenAI**: Higher quality embeddings (requires API credits)
-- **HuggingFace**: Free alternative using sentence-transformers
+### Embedding'ler
+- **OpenAI**: Daha yüksek kalite embedding'ler (API kredisi gerektirir)
+- **HuggingFace**: Sentence-transformers kullanan ücretsiz alternatif
 
-### Vector Databases
-- **FAISS**: Facebook's fast similarity search library
-- **Chroma**: Modern vector database with advanced features
+### Vektör Veritabanları
+- **FAISS**: Facebook'un hızlı benzerlik arama kütüphanesi
+- **Chroma**: Gelişmiş özelliklerle modern vektör veritabanı
 
-## Project Structure
+## Proje Yapısı
 
 ```
 document-qa-system/
-├── app.py                 # Main Streamlit application
-├── requirements.txt       # Python dependencies  
-├── .env.example          # Environment variables template
-├── README.md             # Project documentation
-└── chat_history_*.pkl    # Auto-generated conversation files
+├── app.py                 # Ana Streamlit uygulaması
+├── requirements.txt       # Python bağımlılıkları
+├── .env.example          # Çevre değişkenleri şablonu
+├── README.md             # Proje dokümantasyonu
+└── chat_history_*.pkl    # Otomatik oluşturulan konuşma dosyaları
 ```
 
-## Requirements
+## Gereksinimler
 
 - Python >= 3.8
-- OpenAI API Key
-- Internet connection
+- OpenAI API Anahtarı
+- İnternet bağlantısı
 
-## Dependencies
+## Bağımlılıklar
 
 ```
 streamlit>=1.28.0
@@ -112,68 +112,58 @@ tiktoken>=0.5.0
 python-dotenv>=1.0.0
 ```
 
-## Chat Management
+## Sohbet Yönetimi
 
-- **New Chat**: Automatically saves current conversation when starting new one
-- **Auto-save**: Conversations saved with timestamp filenames
-- **Load Chats**: Select from dropdown to instantly load previous conversations
-- **Clear**: Remove current conversation from memory
+- **Yeni Sohbet**: Yeni sohbet başlatırken mevcut konuşmayı otomatik kaydeder
+- **Otomatik Kayıt**: Konuşmalar zaman damgalı dosya adlarıyla kaydedilir
+- **Sohbet Yükle**: Önceki konuşmaları anında yüklemek için dropdown'dan seçin
+- **Temizle**: Mevcut konuşmayı hafızadan kaldır
 
-## Performance Tips
+## Performans İpuçları
 
-### Cost Optimization
+### Maliyet Optimizasyonu
 - Model: GPT-4o Mini
-- Embedding: HuggingFace (free)
-- Database: FAISS
+- Embedding: HuggingFace (ücretsiz)
+- Veritabanı: FAISS
 
-### Quality Optimization  
+### Kalite Optimizasyonu
 - Model: GPT-4
 - Embedding: OpenAI
-- Database: Chroma
+- Veritabanı: Chroma
 
-### Speed Optimization
+### Hız Optimizasyonu
 - Model: GPT-3.5 Turbo
-- Embedding: HuggingFace  
-- Database: FAISS
+- Embedding: HuggingFace
+- Veritabanı: FAISS
 
-## Troubleshooting
+## Sorun Giderme
 
-### Common Issues
+### Yaygın Sorunlar
 
-**Import Errors:**
+**Import Hataları:**
 ```bash
 pip install --upgrade langchain langchain-community langchain-openai
 ```
 
-**API Key Issues:**
-- Verify OpenAI API key is valid and has credits
-- Check .env file formatting
+**API Anahtarı Sorunları:**
+- OpenAI API anahtarının geçerli olduğunu ve kredisi olduğunu kontrol edin
+- .env dosyası formatını kontrol edin
 
-**Memory Issues:**
-- Use smaller documents or reduce chunk sizes
-- Close other applications to free memory
+**Hafıza Sorunları:**
+- Daha küçük dokümanlar kullanın veya chunk boyutlarını azaltın
+- Hafızayı boşaltmak için diğer uygulamaları kapatın
 
-**Performance Issues:**
-- FAISS generally faster than Chroma for large documents
-- HuggingFace embeddings process locally (slower but free)
+**Performans Sorunları:**
+- FAISS genellikle büyük dokümanlar için Chroma'dan daha hızlıdır
+- HuggingFace embedding'leri yerel olarak işlenir (daha yavaş ama ücretsiz)
 
-## Security
+## Güvenlik
 
-Create a `.gitignore` file to protect sensitive data:
+Hassas verileri korumak için bir `.gitignore` dosyası oluşturun:
 ```
 .env
 *.pkl
 __pycache__/
 .streamlit/
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/new-feature`)
-3. Commit changes (`git commit -am 'Add new feature'`)
-4. Push to branch (`git push origin feature/new-feature`)
-5. Create Pull Request
-
-
 
