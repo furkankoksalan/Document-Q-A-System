@@ -193,5 +193,11 @@ echo ".env" >> .gitignore
 echo "*.pkl" >> .gitignore
 echo "__pycache__/" >> .gitignore
 
+# Katkıda Bulunma
+#----------------
+git fork
+git checkout -b feature/yeni-ozellik
+git commit -m "Yeni özellik eklendi"
+git push origin feature/yeni-ozellik
 
--```
+```
